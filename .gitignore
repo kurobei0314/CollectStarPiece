@@ -1,0 +1,13 @@
+CollectStarPiece/.vscode
+CollectStarPiece/Library/*
+CollectStarPiece/Temp/*
+CollectStarPiece/Assets/Resources/Fonts/*
+CollectStarPiece/Assets/TextMesh\ Pro/*
+CollectStarPiece/Assets/Plugins/*
+CollectStarPiece/Logs/*
+CollectStarPiece/Packages/*
+CollectStarPiece/ProjectSettings/*
+CollectStarPiece/UserSettings/*
+CollectStarPiece/Assets/Resources/DOTween*
+CollectStarPiece/Assembly-CSharp.csproj
+.DS_Store
