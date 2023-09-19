@@ -12,7 +12,7 @@ public class BackgroundPresenter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _backgroundView.ObserveEveryValueChanged(x => x.IsButtonEnabled)
+        _backgroundView.ObserveEveryValueChanged(x => x.IsButtonEnabled).Where(x => !x)
         .Subscribe(_ => {
             _background.SetTime();
         }).AddTo(this);

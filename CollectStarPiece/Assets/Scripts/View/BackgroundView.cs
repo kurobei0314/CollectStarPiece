@@ -6,13 +6,15 @@ using UniRx;
 
 public class BackgroundView : MonoBehaviour
 {
-    private bool _isButtonEnabled;
+    private bool _isButtonEnabled= true;
     public bool IsButtonEnabled => _isButtonEnabled;
+
+    [SerializeField] GameObject _backgroundImage;
     
     // Start is called before the first frame update
     void Start()
     {
-        _isButtonEnabled = true;
+
     }
 
     // Update is called once per frame
@@ -24,9 +26,10 @@ public class BackgroundView : MonoBehaviour
     public void ClickChangeTimeButton(){
         if (!_isButtonEnabled) return;
         _isButtonEnabled = false;
-        
-        Debug.Log("wa------------------------i");
 
         // ここで背景が回る
+        _backgroundImage.transform
+            .DORotate(_backgroundImage.transform.eulerAngles + Vector3.forward * 180f, 1f, RotateMode.FastBeyond360)
+            .OnComplete(() => _isButtonEnabled = true);
     }
 }
