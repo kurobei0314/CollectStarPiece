@@ -6,10 +6,11 @@ using UniRx;
 
 public class BackgroundView : MonoBehaviour
 {
-    private bool _isButtonEnabled= true;
+    private bool _isButtonEnabled = true;
     public bool IsButtonEnabled => _isButtonEnabled;
 
-    [SerializeField] GameObject _backgroundImage;
+    [SerializeField] private GameObject _backgroundImage;
+    [SerializeField] private GameObject _clickNightButton;
     
     // Start is called before the first frame update
     void Start()
@@ -31,5 +32,10 @@ public class BackgroundView : MonoBehaviour
         _backgroundImage.transform
             .DORotate(_backgroundImage.transform.eulerAngles + Vector3.forward * 180f, 1f, RotateMode.FastBeyond360)
             .OnComplete(() => _isButtonEnabled = true);
+    }
+
+    public void SetActiveClickNightButton(bool is_active){
+        Debug.Log("is_active: " + is_active);
+        _clickNightButton.SetActive(is_active);
     }
 }
