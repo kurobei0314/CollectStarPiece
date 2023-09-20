@@ -5,10 +5,17 @@ using UnityEngine.EventSystems;
 
 public class NightButtonView : MonoBehaviour, IPointerDownHandler
 {
-    [SerializeField] private ParticleSystem particle;
-    
+    [SerializeField] private ParticleSystem _particle;
+
     public void OnPointerDown(PointerEventData data)
     {
         
+    }
+
+    public bool IsPlayingStarParticle ()
+    {
+        // TODO: パーティクルが再生されてるかをみる
+        // return _particle.gameObject.activeSelf;
+        return true;
     }
 }
