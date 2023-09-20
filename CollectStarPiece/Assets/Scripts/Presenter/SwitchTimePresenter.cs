@@ -4,7 +4,7 @@ using UnityEngine;
 using UniRx;
 using System;
 
-public class BackgroundPresenter : MonoBehaviour
+public class SwitchTimePresenter : MonoBehaviour
 {
     [SerializeField] private BackgroundView _backgroundView;
     [SerializeField] private Background _background;
@@ -18,7 +18,7 @@ public class BackgroundPresenter : MonoBehaviour
             _background.SetTime();
         }).AddTo(this);
 
-        // 昼夜切り替えボタンを押した結果、夜になった場合
+        // 昼夜切り替えボタンを押した結果、夜のボタンを作るかどうか
         _background.ObserveEveryValueChanged(x => x.CurrentTime)
         .Subscribe(time => {
             _backgroundView.SetActiveClickNightButton(time == Background.Time.NIGHT);

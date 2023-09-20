@@ -35,7 +35,6 @@ public class BackgroundView : MonoBehaviour
     }
 
     public void SetActiveClickNightButton(bool is_active){
-        Debug.Log("is_active: " + is_active);
         _clickNightButton.SetActive(is_active);
     }
 }
