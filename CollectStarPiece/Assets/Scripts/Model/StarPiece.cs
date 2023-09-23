@@ -20,16 +20,4 @@ public class StarPiece : MonoBehaviour
         if (_current_piece.Value < 0) return;
         _current_piece.Value -= num;
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

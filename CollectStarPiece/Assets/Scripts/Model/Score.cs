@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Score : MonoBehaviour
 {
-
-    private int _score;
+    int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,5 +15,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void AddScorePoint(int num){
+        score += num;
     }
 }
