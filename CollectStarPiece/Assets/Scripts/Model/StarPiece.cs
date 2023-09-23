@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class StarPiece : MonoBehaviour
 {
     private int _maxStarPiece = 5;
-    private int _current_piece = 0;
-    public int CurrentPiece => _current_piece;
+    private ReactiveProperty<int> _current_piece = new ReactiveProperty<int>(0);
+    public ReactiveProperty<int> CurrentPiece => _current_piece;
 
     public void AddCurrentPiece(int num)
     {
-        if (_current_piece >= _maxStarPiece) return;
-        _current_piece += num;
+        if (_current_piece.Value >= _maxStarPiece) return;
+        Debug.Log("ye-------------------------i");
+        _current_piece.Value += num;
     }
 
     public void SubCurrentPiece(int num)
     {
-        if (_current_piece < 0) return;
-        _current_piece -= num;
+        if (_current_piece.Value < 0) return;
+        _current_piece.Value -= num;
     }
 
     // Start is called before the first frame update
