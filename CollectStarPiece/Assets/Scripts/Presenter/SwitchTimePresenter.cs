@@ -21,7 +21,14 @@ public class SwitchTimePresenter : MonoBehaviour
         // 昼夜切り替えボタンを押した結果、夜のボタンを作るかどうか
         _background.ObserveEveryValueChanged(x => x.CurrentTime)
         .Subscribe(time => {
-            _backgroundView.SetActiveClickNightButton(time == Background.Time.NIGHT);
+            if (time == Background.Time.NIGHT)
+            {
+                _backgroundView.ChangeNightBackground();
+            }
+            else
+            {
+                _backgroundView.ChangeAfternoonBackground();
+            }
         }).AddTo(this);
     }
 

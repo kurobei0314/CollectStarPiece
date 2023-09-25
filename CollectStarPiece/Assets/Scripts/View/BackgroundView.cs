@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UniRx;
+using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class BackgroundView : MonoBehaviour
 {
     private bool _isButtonEnabled = true;
     public bool IsButtonEnabled => _isButtonEnabled;
 
-    [SerializeField] private GameObject _backgroundImage;
+    [SerializeField] private Image[] _afternoonBackgroundImages;
+    [SerializeField] private Image[] _nightBackgroundImages;
+
+    [SerializeField] private PlayableDirector _afternoonPlayableDirector;
+    [SerializeField] private PlayableDirector _nightPlayableDirector;
+
+
     [SerializeField] private GameObject _clickNightButton;
+
+    private GameObject _currentBackground;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        _nightPlayableDirector.Play();
     }
 
     // Update is called once per frame
@@ -27,11 +37,34 @@ public class BackgroundView : MonoBehaviour
     public void ClickChangeTimeButton(){
         if (!_isButtonEnabled) return;
         _isButtonEnabled = false;
+    }
 
-        // ここで背景が回る
-        _backgroundImage.transform
-            .DORotate(_backgroundImage.transform.eulerAngles + Vector3.forward * 180f, 1f, RotateMode.FastBeyond360)
-            .OnComplete(() => _isButtonEnabled = true);
+    // 昼に切り替える
+    public void ChangeAfternoonBackground(){
+        _nightPlayableDirector.Stop();
+        var sequence = DOTween.Sequence(); 
+        sequence.Append(_afternoonBackgroundImages[0].DOFade(1.0f, 1.0f))
+                .Join(_nightBackgroundImages[0].DOFade(0.0f, 1.0f))
+                .Join(_nightBackgroundImages[1].DOFade(0.0f, 1.0f))
+                .OnComplete(() => {
+                    _isButtonEnabled = true;
+                    _afternoonPlayableDirector.Play();
+                    SetActiveClickNightButton(false);
+                    });
+    }
+
+    // 夜に切り換える
+    public void ChangeNightBackground(){
+        _afternoonPlayableDirector.Stop();
+        var sequence = DOTween.Sequence(); 
+        sequence.Append(_nightBackgroundImages[0].DOFade(1.0f, 1.0f))
+                .Join(_afternoonBackgroundImages[0].DOFade(0.0f, 1.0f))
+                .Join(_afternoonBackgroundImages[1].DOFade(0.0f, 1.0f))
+                .OnComplete(() => {
+                    _isButtonEnabled = true;
+                    _nightPlayableDirector.Play();
+                    SetActiveClickNightButton(true);
+                    });
     }
 
     public void SetActiveClickNightButton(bool is_active){
