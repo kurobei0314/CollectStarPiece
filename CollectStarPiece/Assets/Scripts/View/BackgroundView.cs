@@ -17,6 +17,7 @@ public class BackgroundView : MonoBehaviour
     [SerializeField] private PlayableDirector _afternoonPlayableDirector;
     [SerializeField] private PlayableDirector _nightPlayableDirector;
 
+    [SerializeField] private GameObject StarPieces;
 
     [SerializeField] private GameObject _clickNightButton;
 
@@ -50,6 +51,7 @@ public class BackgroundView : MonoBehaviour
                     _isButtonEnabled = true;
                     _afternoonPlayableDirector.Play();
                     SetActiveClickNightButton(false);
+                    StarPieces.SetActive(true);
                     });
     }
 
@@ -64,6 +66,7 @@ public class BackgroundView : MonoBehaviour
                     _isButtonEnabled = true;
                     _nightPlayableDirector.Play();
                     SetActiveClickNightButton(true);
+                    StarPieces.SetActive(false);
                     });
     }
 
