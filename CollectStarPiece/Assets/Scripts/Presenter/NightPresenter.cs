@@ -11,6 +11,7 @@ public class NightPresenter : MonoBehaviour
     [SerializeField] private NightButtonView _nightButtonView;
     [SerializeField] private StarPiece _starPiece;
     [SerializeField] private StarPieceView[] _starPieceViews;
+    [SerializeField] private PlayerView _playerView;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class NightPresenter : MonoBehaviour
             .Where(_ => _nightButtonView.IsPlayingStarParticle())
             .Subscribe(_ => {
                 _starPiece.AddCurrentPiece(1);
+                _playerView.ChangePrayImage();
             }).AddTo(this);
 
         // 表示している数が増えた時に星のカケラの表示数を増やす

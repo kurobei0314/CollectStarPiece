@@ -10,6 +10,7 @@ public class AfternoonPresenter : MonoBehaviour
     [SerializeField] private StarPiece _starPiece;
     //[SerializeField] private StarPiece _starPiece;
     [SerializeField] private Score _score;
+    [SerializeField] private PlayerView _playerView;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class AfternoonPresenter : MonoBehaviour
                 .Subscribe(_ => {
                     _starPiece.SubCurrentPiece(1);
                     _score.AddScorePoint(1);
+                    _playerView.ChangeGetImage();
                 }).AddTo(this);
         }
     }
