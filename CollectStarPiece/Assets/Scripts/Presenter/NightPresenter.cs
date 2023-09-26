@@ -12,6 +12,7 @@ public class NightPresenter : MonoBehaviour
     [SerializeField] private StarPiece _starPiece;
     [SerializeField] private StarPieceView[] _starPieceViews;
     [SerializeField] private PlayerView _playerView;
+    [SerializeField] private StarParticleView[] _starParticleView;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,12 @@ public class NightPresenter : MonoBehaviour
         _nightButtonTrigger.OnPointerDownAsObservable()
             .Where(_ => _nightButtonView.IsPlayingStarParticle())
             .Subscribe(_ => {
-                _starPiece.AddCurrentPiece(1);
+                int star_count = 0;
+                for (int i = 0; i < _starParticleView.Length; i++)
+                {
+                    if (_starParticleView[i].IsActive) star_count++;
+                }
+                _starPiece.AddCurrentPiece(star_count);
                 _playerView.ChangePrayImage();
             }).AddTo(this);
 

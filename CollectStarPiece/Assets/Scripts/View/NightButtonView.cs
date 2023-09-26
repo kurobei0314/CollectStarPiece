@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class NightButtonView : MonoBehaviour, IPointerDownHandler
 {
-    [SerializeField] private ParticleSystem _particle;
+    // [SerializeField] private ParticleSystem _particle;
 
     public void OnPointerDown(PointerEventData data)
     {

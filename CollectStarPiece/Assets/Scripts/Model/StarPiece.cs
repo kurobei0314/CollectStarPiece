@@ -12,7 +12,11 @@ public class StarPiece : MonoBehaviour
     public void AddCurrentPiece(int num)
     {
         if (_current_piece.Value >= _maxStarPiece) return;
-        _current_piece.Value += num;
+        if (_current_piece.Value + num >= _maxStarPiece) {
+            _current_piece.Value = _maxStarPiece;
+        } else {
+            _current_piece.Value += num;
+        }
     }
 
     public void SubCurrentPiece(int num)
