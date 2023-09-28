@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     private bool _isStartAnimationEnd = false;
     private float _gameTimer = 30.0f;
     [SerializeField] private PlayableDirector _opDirector;
+    [SerializeField] private PlayableDirector _edDirector;
     [SerializeField] private GameTimerView _gameTimeView;
     [SerializeField] private StarParticleView[] _starParticleView;
     [SerializeField] private GameObject _starParticles;
@@ -48,12 +49,17 @@ public class GameController : MonoBehaviour
     {
         if (_opDirector == aDirector){
             _gameTimeView.StartTimer(_gameTimer);
+        } 
+        else if (_edDirector == aDirector) {
+            
         }
     }
 
     // エンディングを流す
     void PlayEnding()
     {
+        _edDirector.Play();
+        _edDirector.stopped += OnPlayableDirectorStopped;
         Debug.Log("ゲーム終わったー");
     }
 }
