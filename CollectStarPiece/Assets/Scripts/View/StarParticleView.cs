@@ -34,4 +34,9 @@ public class StarParticleView : MonoBehaviour
     {
         is_active = false;
     }
+
+    public void SetActiveFalse()
+    {
+        is_active = false;
+    }
 }

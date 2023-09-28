@@ -54,6 +54,10 @@ public class BackgroundView : MonoBehaviour
                     SetActiveClickNightButton(false);
                     StarPieces.SetActive(true);
                     _starParticles.SetActive(false);
+                    foreach (Transform child in _starParticles.transform)
+                    {
+                        child.gameObject.GetComponent<StarParticleView>().SetActiveFalse();
+                    }
                     });
     }
 
