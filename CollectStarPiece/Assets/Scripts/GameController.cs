@@ -5,6 +5,8 @@ using UniRx;
 using UnityEngine.Timeline;
 using UnityEngine.Playables;
 using UniRx.Triggers;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -17,11 +19,16 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _starParticles;
     [SerializeField] private Background _background;
 
+    [SerializeField] private GameObject _gameResultUI;
+    [SerializeField] private TextMeshProUGUI _scoreText;
+    [SerializeField] private Score _scoreNum;
+
     // Start is called before the first frame update
     void Start()
     {
         _opDirector.stopped += OnPlayableDirectorStopped;
         _starParticles.SetActive(false);
+        _gameResultUI.SetActive(false);
 
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime).FirstOrDefault(x => x <= 0.0f)
         .Subscribe(_ => {
@@ -39,19 +46,14 @@ public class GameController : MonoBehaviour
                     .Subscribe(_ => _starParticleView[1].gameObject.SetActive(true)).AddTo(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnPlayableDirectorStopped(PlayableDirector aDirector)
     {
         if (_opDirector == aDirector){
             _gameTimeView.StartTimer(_gameTimer);
         } 
         else if (_edDirector == aDirector) {
-            
+            _scoreText.text = "願いのかけらを" + _scoreNum.ScoreNum + "個集めました";
+            _gameResultUI.SetActive(true);
         }
     }
 
@@ -60,6 +62,9 @@ public class GameController : MonoBehaviour
     {
         _edDirector.Play();
         _edDirector.stopped += OnPlayableDirectorStopped;
-        Debug.Log("ゲーム終わったー");
+    }
+
+    public void OnClickRestartButton(){
+        SceneManager.LoadScene (SceneManager.GetActiveScene().name);
     }
 }
