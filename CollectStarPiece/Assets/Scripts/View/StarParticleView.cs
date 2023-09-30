@@ -21,14 +21,13 @@ public class StarParticleView : MonoBehaviour
                         is_active = true;
                         PlayStarParticle();
                     }
-                });
+                }).AddTo(this);
     }
 
-    public void PlayStarParticle()
+    private void PlayStarParticle()
     {
         this.GetComponent<ParticleSystem>().Play();
         AudioManager.Instance.PlaySE("Star");
-        is_active = true;
     }
 
     void OnParticleSystemStopped ()

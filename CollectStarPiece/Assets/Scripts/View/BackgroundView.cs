@@ -44,6 +44,11 @@ public class BackgroundView : MonoBehaviour
     // 昼に切り替える
     public void ChangeAfternoonBackground(){
         _nightPlayableDirector.Stop();
+        foreach (Transform child in _starParticles.transform)
+        {
+            child.gameObject.GetComponent<StarParticleView>().SetActiveFalse();
+        }
+        _starParticles.SetActive(false);
         var sequence = DOTween.Sequence(); 
         sequence.Append(_afternoonBackgroundImages[0].DOFade(1.0f, 1.0f))
                 .Join(_nightBackgroundImages[0].DOFade(0.0f, 1.0f))
@@ -53,11 +58,6 @@ public class BackgroundView : MonoBehaviour
                     _afternoonPlayableDirector.Play();
                     SetActiveClickNightButton(false);
                     StarPieces.SetActive(true);
-                    _starParticles.SetActive(false);
-                    foreach (Transform child in _starParticles.transform)
-                    {
-                        child.gameObject.GetComponent<StarParticleView>().SetActiveFalse();
-                    }
                     });
     }
 
@@ -74,6 +74,10 @@ public class BackgroundView : MonoBehaviour
                     SetActiveClickNightButton(true);
                     StarPieces.SetActive(false);
                     _starParticles.SetActive(true);
+                    foreach (Transform child in _starParticles.transform)
+                    {
+                        child.gameObject.GetComponent<StarParticleView>().SetActiveFalse();
+                    }
                     });
     }
 

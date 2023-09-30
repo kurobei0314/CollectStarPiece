@@ -42,15 +42,25 @@ public class GameController : MonoBehaviour
             PlayEnding();
         }).AddTo(this);
 
-        // 15秒経ったらActiveをtrueにする
-        _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
-                    .FirstOrDefault(x => x <= 20.0f)
-                    .Subscribe(_ => _starParticleView[1].gameObject.SetActive(true)).AddTo(this);
-
         // 5秒経ったらActiveをtrueにする
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
-                    .FirstOrDefault(x => x <= 10.0f)
+                    .FirstOrDefault(x => x <= 25.0f)
+                    .Subscribe(_ => _starParticleView[1].gameObject.SetActive(true)).AddTo(this);
+
+        // 10秒経ったらActiveをtrueにする
+        _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
+                    .FirstOrDefault(x => x <= 20.0f)
                     .Subscribe(_ => _starParticleView[2].gameObject.SetActive(true)).AddTo(this);
+
+        // 15秒経ったらActiveをtrueにする
+        _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
+                    .FirstOrDefault(x => x <= 15.0f)
+                    .Subscribe(_ => _starParticleView[3].gameObject.SetActive(true)).AddTo(this);
+
+        // 10秒経ったらActiveをtrueにする
+        _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
+                    .FirstOrDefault(x => x <= 10.0f)
+                    .Subscribe(_ => _starParticleView[4].gameObject.SetActive(true)).AddTo(this);
     }
 
     void OnPlayableDirectorStopped(PlayableDirector aDirector)

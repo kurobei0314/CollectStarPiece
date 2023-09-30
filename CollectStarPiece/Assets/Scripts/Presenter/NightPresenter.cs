@@ -25,7 +25,9 @@ public class NightPresenter : MonoBehaviour
                 for (int i = 0; i < _starParticleView.Length; i++)
                 {
                     if (_starParticleView[i].IsActive) star_count++;
+                    if (_starParticleView[i].IsActive) Debug.Log("i: "+i);
                 }
+                Debug.Log("star_count: "+ star_count);
                 if (star_count != 0) AudioManager.Instance.PlaySE("CorrectPray");
                 else                 AudioManager.Instance.PlaySE("MistakePray");
                 _starPiece.AddCurrentPiece(star_count);
@@ -36,13 +38,18 @@ public class NightPresenter : MonoBehaviour
         _starPiece.CurrentPiece
             .Pairwise()
             .Where(value => value.Current > value.Previous)
-            .Subscribe(_ => {
-                int index;
-                while (true) {
-                    index = UnityEngine.Random.Range(0, _starPieceViews.Length);
-                    if (!_starPieceViews[index].gameObject.activeSelf) break;
+            .Subscribe(num => {
+                int add_num = num.Current - num.Previous;
+                Debug.Log("add_num:" + add_num);
+                for (int i = 0; i < add_num ; i++)
+                {
+                    int index;
+                    while (true) {
+                        index = UnityEngine.Random.Range(0, _starPieceViews.Length);
+                        if (!_starPieceViews[index].gameObject.activeSelf) break;
+                    }
+                    _starPieceViews[index].SetStarPiece();
                 }
-                _starPieceViews[index].SetStarPiece();
             }).AddTo(this);
     }
 
