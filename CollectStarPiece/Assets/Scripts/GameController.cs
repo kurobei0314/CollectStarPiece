@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     private bool _isStartAnimationEnd = false;
-    private float _gameTimer = 30.0f;
+    private float _gameTimer = 60.0f;
     [SerializeField] private PlayableDirector _opDirector;
     [SerializeField] private PlayableDirector _edDirector;
     [SerializeField] private GameTimerView _gameTimeView;
@@ -44,22 +44,22 @@ public class GameController : MonoBehaviour
 
         // 5秒経ったらActiveをtrueにする
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
-                    .FirstOrDefault(x => x <= 25.0f)
+                    .FirstOrDefault(x => x <= 50.0f)
                     .Subscribe(_ => _starParticleView[1].gameObject.SetActive(true)).AddTo(this);
 
         // 10秒経ったらActiveをtrueにする
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
-                    .FirstOrDefault(x => x <= 20.0f)
+                    .FirstOrDefault(x => x <= 40.0f)
                     .Subscribe(_ => _starParticleView[2].gameObject.SetActive(true)).AddTo(this);
 
         // 15秒経ったらActiveをtrueにする
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
-                    .FirstOrDefault(x => x <= 15.0f)
+                    .FirstOrDefault(x => x <= 25.0f)
                     .Subscribe(_ => _starParticleView[3].gameObject.SetActive(true)).AddTo(this);
 
         // 10秒経ったらActiveをtrueにする
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
-                    .FirstOrDefault(x => x <= 10.0f)
+                    .FirstOrDefault(x => x <= 15.0f)
                     .Subscribe(_ => _starParticleView[4].gameObject.SetActive(true)).AddTo(this);
     }
 

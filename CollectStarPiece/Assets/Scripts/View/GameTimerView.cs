@@ -6,7 +6,7 @@ using TMPro;
 public class GameTimerView : MonoBehaviour
 {
     private bool _isStartMainGame = false;
-    private float _nowTime = 60.0f;
+    private float _nowTime = 80.0f;
     public float NowTime => _nowTime;
     [SerializeField] private TextMeshProUGUI _timerText;
 
