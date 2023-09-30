@@ -37,12 +37,12 @@ public class GameController : MonoBehaviour
 
         // 15秒経ったらActiveをtrueにする
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
-                    .FirstOrDefault(x => x <= 15.0f)
+                    .FirstOrDefault(x => x <= 20.0f)
                     .Subscribe(_ => _starParticleView[0].gameObject.SetActive(true)).AddTo(this);
 
         // 5秒経ったらActiveをtrueにする
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime)
-                    .FirstOrDefault(x => x <= 5.0f)
+                    .FirstOrDefault(x => x <= 10.0f)
                     .Subscribe(_ => _starParticleView[1].gameObject.SetActive(true)).AddTo(this);
     }
 
