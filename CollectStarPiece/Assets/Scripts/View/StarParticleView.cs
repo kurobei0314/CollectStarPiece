@@ -16,11 +16,8 @@ public class StarParticleView : MonoBehaviour
         Observable.Interval(System.TimeSpan.FromSeconds(1))
                 .Where(_ => !is_active && this.gameObject.activeSelf)
                 .Subscribe(_ => {
-                    Debug.Log(is_active);
-                    Debug.Log(this.gameObject.activeSelf);
                     var rnd = UnityEngine.Random.Range(0, 10);
-                    Debug.Log(rnd);
-                    if (rnd < 10) {
+                    if (rnd < 9) {
                         is_active = true;
                         PlayStarParticle();
                     }

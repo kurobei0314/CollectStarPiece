@@ -22,6 +22,7 @@ public class SwitchTimePresenter : MonoBehaviour
         _background.ObserveEveryValueChanged(x => x.CurrentTime)
         .Subscribe(time => {
             if(!_background.isInitialized) return;
+            AudioManager.Instance.PlaySE("ChangeTime");
             if (time == Background.Time.NIGHT)
             {
                 _backgroundView.ChangeNightBackground();

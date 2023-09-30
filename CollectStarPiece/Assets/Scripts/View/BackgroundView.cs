@@ -65,9 +65,9 @@ public class BackgroundView : MonoBehaviour
     public void ChangeNightBackground(){
         _afternoonPlayableDirector.Stop();
         var sequence = DOTween.Sequence(); 
-        sequence.Append(_nightBackgroundImages[0].DOFade(1.0f, 1.0f))
-                .Join(_afternoonBackgroundImages[0].DOFade(0.0f, 1.0f))
-                .Join(_afternoonBackgroundImages[1].DOFade(0.0f, 1.0f))
+        sequence.Append(_nightBackgroundImages[0].DOFade(1.0f, 1.5f))
+                .Join(_afternoonBackgroundImages[0].DOFade(0.0f, 1.5f))
+                .Join(_afternoonBackgroundImages[1].DOFade(0.0f, 1.5f))
                 .OnComplete(() => {
                     _isButtonEnabled = true;
                     _nightPlayableDirector.Play();

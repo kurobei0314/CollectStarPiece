@@ -2181,15 +2181,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585904637}
-  m_LocalRotation: {x: 0.68091345, y: 0.19688953, z: 0.3105962, w: 0.6333415}
-  m_LocalPosition: {x: 0, y: 0, z: -0.39000034}
+  m_LocalRotation: {x: 0.6639213, y: -0.24878557, z: 0.65918726, w: 0.25057223}
+  m_LocalPosition: {x: 0, y: 0, z: 1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1616394298}
   m_Father: {fileID: 184697202}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 132.252, y: -89.59, z: -79.70001}
+  m_LocalEulerAnglesHint: {x: 138.646, y: -89.59, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -7.96, y: 4.04}
@@ -2249,7 +2249,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -2916,7 +2916,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.1, y: 0.1, z: 0.1}
+    m_Scale: {x: 0, y: 0.1, z: 0.1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -7317,7 +7317,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735663580}
-  m_LocalRotation: {x: 0.70466805, y: -0.3004449, z: -0.25210324, w: 0.59128666}
+  m_LocalRotation: {x: 0.7318701, y: 0.22625037, z: -0.574561, w: 0.2881955}
   m_LocalPosition: {x: 0, y: 0, z: 1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7325,7 +7325,7 @@ RectTransform:
   - {fileID: 1559595386}
   m_Father: {fileID: 184697202}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 137.013, y: 76.268, z: 80.54}
+  m_LocalEulerAnglesHint: {x: 137.013, y: 76.268, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3.9, y: 4.05}
@@ -7373,7 +7373,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -8040,7 +8040,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.1, y: 0.1, z: 0.1}
+    m_Scale: {x: 0, y: 0.1, z: 0.1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -12207,15 +12207,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749966510}
-  m_LocalRotation: {x: 0.74722356, y: -0.046589248, z: 0.04207387, w: 0.6616014}
-  m_LocalPosition: {x: 0, y: 0, z: 0.57}
+  m_LocalRotation: {x: 0.50429016, y: -0.4957088, z: 0.50069445, w: 0.4992688}
+  m_LocalPosition: {x: 0, y: 0, z: 1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1826141171}
   m_Father: {fileID: 184697202}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 96.951996, y: -0.58200073, z: 6.619995}
+  m_LocalEulerAnglesHint: {x: 90.573, y: -89.59, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1.11, y: 4.76}
@@ -12275,7 +12275,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -12942,7 +12942,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.1, y: 0.1, z: 0.1}
+    m_Scale: {x: 0, y: 0.1, z: 0.1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -17329,15 +17329,15 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001368151}
-  m_LocalRotation: {x: 0.70466805, y: -0.3004449, z: -0.25210324, w: 0.59128666}
-  m_LocalPosition: {x: 0, y: 0, z: -371}
+  m_LocalRotation: {x: 0.7318701, y: 0.22625037, z: -0.574561, w: 0.2881955}
+  m_LocalPosition: {x: 0, y: 0, z: 1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1859800846}
   m_Father: {fileID: 684061504}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 137.013, y: 76.268, z: 80.54}
+  m_LocalEulerAnglesHint: {x: 137.013, y: 76.268, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 840, y: 402}
@@ -18064,7 +18064,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.1, y: 0.1, z: 0.1}
+    m_Scale: {x: 0, y: 0.1, z: 0.1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -28254,7 +28254,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!1 &1598545255
 GameObject:
