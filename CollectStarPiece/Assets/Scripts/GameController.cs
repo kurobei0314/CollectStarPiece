@@ -67,4 +67,8 @@ public class GameController : MonoBehaviour
     public void OnClickRestartButton(){
         SceneManager.LoadScene (SceneManager.GetActiveScene().name);
     }
+
+    public void OnClickTweetButton(){
+        naichilab.UnityRoomTweet.Tweet ("Ycollectstarpiece", "願いのかけらを" + _scoreNum.ScoreNum + "個集めました", "願いのかけら", "unity1week");
+    }
 }
