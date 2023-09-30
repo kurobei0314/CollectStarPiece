@@ -49,6 +49,7 @@ public class BackgroundView : MonoBehaviour
             child.gameObject.GetComponent<StarParticleView>().SetActiveFalse();
         }
         _starParticles.SetActive(false);
+        SetActiveClickNightButton(false);
         var sequence = DOTween.Sequence(); 
         sequence.Append(_afternoonBackgroundImages[0].DOFade(1.0f, 1.0f))
                 .Join(_nightBackgroundImages[0].DOFade(0.0f, 1.0f))
@@ -56,7 +57,6 @@ public class BackgroundView : MonoBehaviour
                 .OnComplete(() => {
                     _isButtonEnabled = true;
                     _afternoonPlayableDirector.Play();
-                    SetActiveClickNightButton(false);
                     StarPieces.SetActive(true);
                     });
     }
