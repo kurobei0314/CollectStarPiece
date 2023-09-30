@@ -13,15 +13,18 @@ public class StarParticleView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.UpdateAsObservable()
-            .Where(_ => !is_active)
-            .Subscribe(_ => {
-                var rnd = UnityEngine.Random.Range(0, 10);
-                if (rnd < 6) {
-                    is_active = true;
-                    PlayStarParticle();
-                }
-            });
+        Observable.Interval(System.TimeSpan.FromSeconds(1))
+                .Where(_ => !is_active && this.gameObject.activeSelf)
+                .Subscribe(_ => {
+                    Debug.Log(is_active);
+                    Debug.Log(this.gameObject.activeSelf);
+                    var rnd = UnityEngine.Random.Range(0, 10);
+                    Debug.Log(rnd);
+                    if (rnd < 10) {
+                        is_active = true;
+                        PlayStarParticle();
+                    }
+                });
     }
 
     public void PlayStarParticle()

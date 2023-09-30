@@ -26,6 +26,9 @@ public class NightPresenter : MonoBehaviour
                 {
                     if (_starParticleView[i].IsActive) star_count++;
                 }
+                Debug.Log(star_count);
+                if (star_count != 0) AudioManager.Instance.PlaySE("CorrectPray");
+                else                 AudioManager.Instance.PlaySE("MistakePray");
                 _starPiece.AddCurrentPiece(star_count);
                 _playerView.ChangePrayImage();
             }).AddTo(this);

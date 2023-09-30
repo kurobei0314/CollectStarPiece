@@ -342,6 +342,7 @@ MonoBehaviour:
   _edDirector: {fileID: 1781188919}
   _gameTimeView: {fileID: 2114011548}
   _starParticleView:
+  - {fileID: 735663584}
   - {fileID: 585904639}
   - {fileID: 749966512}
   _starParticles: {fileID: 184697201}
@@ -349,6 +350,7 @@ MonoBehaviour:
   _gameResultUI: {fileID: 684061503}
   _scoreText: {fileID: 96319915}
   _scoreNum: {fileID: 1409284763}
+  _starParticleResultView: {fileID: 1001368151}
 --- !u!4 &44707270
 Transform:
   m_ObjectHideFlags: 0
@@ -7307,7 +7309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &735663581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7316,7 +7318,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735663580}
   m_LocalRotation: {x: 0.70466805, y: -0.3004449, z: -0.25210324, w: 0.59128666}
-  m_LocalPosition: {x: 0, y: 0, z: 1.21}
+  m_LocalPosition: {x: 0, y: 0, z: 1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7326,7 +7328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 137.013, y: 76.268, z: 80.54}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.3, y: 4.44}
+  m_AnchoredPosition: {x: 3.9, y: 4.05}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &735663582

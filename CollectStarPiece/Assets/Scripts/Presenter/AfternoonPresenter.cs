@@ -21,6 +21,7 @@ public class AfternoonPresenter : MonoBehaviour
                     _starPiece.SubCurrentPiece(1);
                     _score.AddScorePoint(1);
                     _playerView.ChangeGetImage();
+                    AudioManager.Instance.PlaySE("GetItem");
                 }).AddTo(this);
         }
     }
