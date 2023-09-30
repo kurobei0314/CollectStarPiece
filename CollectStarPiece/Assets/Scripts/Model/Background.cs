@@ -9,11 +9,14 @@ public class Background : MonoBehaviour
         NIGHT,
         AFTERNOON
     }
+
+    public bool isInitialized = false; 
     private Time current_time;
     public Time CurrentTime => current_time;
 
     public void InitializeTime(){
         current_time = Time.NIGHT;
+        isInitialized = true;
     }
 
     public void SetTime(){

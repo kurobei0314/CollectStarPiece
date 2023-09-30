@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
         _opDirector.stopped += OnPlayableDirectorStopped;
         _starParticles.SetActive(false);
         _gameResultUI.SetActive(false);
+        AudioManager.Instance.PlayBGM("Main");
 
         _gameTimeView.ObserveEveryValueChanged(x => x.NowTime).FirstOrDefault(x => x <= 0.0f)
         .Subscribe(_ => {
@@ -50,6 +51,8 @@ public class GameController : MonoBehaviour
     {
         if (_opDirector == aDirector){
             _gameTimeView.StartTimer(_gameTimer);
+            _background.InitializeTime();
+            _starParticles.SetActive(true);
         } 
         else if (_edDirector == aDirector) {
             _scoreText.text = "願いのかけらを" + _scoreNum.ScoreNum + "個集めました";
@@ -62,6 +65,7 @@ public class GameController : MonoBehaviour
     {
         _edDirector.Play();
         _edDirector.stopped += OnPlayableDirectorStopped;
+        AudioManager.Instance.PlayBGM("Ed");
     }
 
     public void OnClickRestartButton(){

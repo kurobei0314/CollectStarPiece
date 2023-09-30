@@ -27,6 +27,7 @@ public class StarParticleView : MonoBehaviour
     public void PlayStarParticle()
     {
         this.GetComponent<ParticleSystem>().Play();
+        AudioManager.Instance.PlaySE("Star");
         is_active = true;
     }
 
