@@ -17,7 +17,7 @@ public class StarParticleView : MonoBehaviour
                 .Where(_ => !is_active && this.gameObject.activeSelf)
                 .Subscribe(_ => {
                     var rnd = UnityEngine.Random.Range(0, 10);
-                    if (rnd < 9) {
+                    if (rnd < 8) {
                         is_active = true;
                         PlayStarParticle();
                     }

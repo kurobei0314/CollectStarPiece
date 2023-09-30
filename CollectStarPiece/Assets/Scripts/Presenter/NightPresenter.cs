@@ -19,7 +19,7 @@ public class NightPresenter : MonoBehaviour
     {
         // 画面が押されたかつパーティクルが再生されている時に押す
         _nightButtonTrigger.OnPointerDownAsObservable()
-            .Where(_ => _nightButtonView.IsPlayingStarParticle())
+            .Where(_ => _nightButtonView.IsPlayingStarParticle() && !_playerView.IsPray())
             .Subscribe(_ => {
                 int star_count = 0;
                 for (int i = 0; i < _starParticleView.Length; i++)

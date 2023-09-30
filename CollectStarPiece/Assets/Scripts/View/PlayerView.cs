@@ -21,6 +21,12 @@ public class PlayerView : MonoBehaviour
         
     }
 
+    public bool IsPray()
+    {
+        Debug.Log(this.GetComponent<Image>().sprite == _pray);
+        return this.GetComponent<Image>().sprite == _pray;
+    }
+
     public void ChangePrayImage()
     {
         StartCoroutine(ChangeImage(_pray));
