@@ -7,6 +7,7 @@ using UnityEngine.Playables;
 using UniRx.Triggers;
 using TMPro;
 using UnityEngine.SceneManagement;
+using unityroom.Api;
 
 public class GameController : MonoBehaviour
 {
@@ -72,6 +73,7 @@ public class GameController : MonoBehaviour
             _starParticleView[0].gameObject.SetActive(true);
         } 
         else if (_edDirector == aDirector) {
+            UnityroomApiClient.Instance.SendScore(1,  _scoreNum.ScoreNum, ScoreboardWriteMode.HighScoreDesc);
             _scoreText.text = "願いのかけらを" + _scoreNum.ScoreNum + "個集めました";
             _gameResultUI.SetActive(true);
             _starParticleResultView.SetActive(true);
